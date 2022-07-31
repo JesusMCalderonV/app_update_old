@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/style.css")}}" type="text/css" media="all">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400&display=swap" rel="stylesheet"> 
+        <title>{%block title%}{%endblock%}</title>
+    </head>
+    <body>
+        <div class="encabezado" id="menu">
+            <ul class="principal">
+                <li><a href="/" id="actual">INICIO</a></li>
+                <li class="tours"><a href="#">TOURS</a>
+                    <ul class="deplegable">
+                        <li><a href="/parque_tayrona">PARQUE TAYRONA</a></li>
+                        <li><a href="/ciudad_perdida">CIUDAD PERDIDA</a></li>
+                        <li><a href="/palomino">PALOMINO</a></li>
+                        <li><a href="/santa_marta">SANTA MARTA</a></li>
+                        <li><a href="/minca">MINCA</a></li>
+                        <li><a href="/tours">OTROS DESTINOS</a></li>
+                    </ul></li>
+                <li><a href="/contacto">CONTACTO</a></li>
+                <li><a href="/galeria">GALERÍA</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="whatsapp">
+            <a href=""><img class="boton" src="{{url_for('static', filename="img/wsp.svg")}}" alt="logo wsp"></a>
+        </div>
+        <div>
+            <img class="encabezado-img" src="{{url_for('static', filename="img/encabezado.jpg")}}">
+        </div>
+        <hr>
+        <br>
+        <br>
+        {% block body %}{% endblock %}
+        <hr>
+        <div class="grid">
+            <div class="acerca">
+                <h1>SOBRE NOSOTROS</h1>
+                <br>
+                <p>Somos una compañía de tours que te ofrece la posibiliodad de vivir una aventura en distintos destinos y de distintas maneras, en familia, pareja e incluso solitario</p>
+                <br>
+                <p>Tenemos certificación para garantizar que tendrás una gran experiencia y un excelente servicio</p>
+            </div>
+            <div>
+                <h1>CONTACTANOS A TRAVÉZ DE </h1>
+                <img class="redes" src="{{ url_for('static', filename='img/fondo-social.svg') }}">
+                <hr>
+                <a href="https://facebook.com">
+                    <img src="{{url_for('static', filename="img/f.svg")}}" alt="facebook logo" class="icon" id="fc">
+                </a>
+                <a href="https://instagram.com">
+                    <img class="icon" src="{{url_for('static', filename="img/in.svg")}}">
+                </a>
+                <a href="https://twitter.com">
+                    <img class="icon" src="{{url_for('static', filename="img/tw.svg")}}">
+                </a>
+                <a href="https://youtube.com">
+                    <img class="icon" src="{{url_for('static', filename="img/y.svg")}}">
+                </a>
+                <br>
+                <a class="cre" href="https://iconscout.com/icon-pack/social-media-contact-info">Social Media Icon Pack</a> by <a href="https://iconscout.com/contributors/bombasticon">Bombasticon Studio</a> on <a href="https://iconscout.com">IconScout</a>
+            </div>
+            <div class="terminos-legales">
+                <h1>CONSTITUCIÓN LEGAL</h1>
+                <p>
+                    The company tours se encuentra actualmente registrada en la camára de comercio, contamos con certificación para el transporte y guía de turistas en distintos destinos
+                </p>
+                <p>
+                    Contamos con el aval de varias instituciones públicas que constatan el cumpliento con los estandares de atención al cliente además de medidas de seguridad para el cuidado de nuestros clientes
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

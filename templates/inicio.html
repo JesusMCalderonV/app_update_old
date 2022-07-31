@@ -1,0 +1,78 @@
+{% extends "plantilla.html" %}
+{%block title%}THE COMPANY TOURS{%endblock%}
+{% block body%}
+  <div class="contenedor_ventas">
+    <div class="producto">
+      <img src="{{url_for('static', filename="img/encabezado.jpg")}}" alt="Portada" class="portada">
+      <div class="nombre">PARQUE TAYRONA</div>
+      <form action="/compra" method="post">
+        <input  class="valor" name="valor" type="text" value="95000">
+        <div class="botones">
+          <button type="submit" class="comprar" id="comprar" name="comprar"><a class="link-compar" href="#"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></a></button>
+          <label for="comprar" class="precio">$95.000</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="producto">
+      <img src="{{url_for('static', filename="img/encabezado.jpg")}}" alt="Portada" class="portada">
+      <div class="nombre">CIUDAD PERDIDA</div>
+      <form action="/compra" method="post">
+        <input  class="valor" name="valor" type="text" value="95000">
+        <div class="botones">
+          <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+          <label for="comprar" class="precio">$95.000</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="producto">
+      <img src="{{url_for('static', filename="img/encabezado.jpg")}}" alt="Portada" class="portada">
+      <div class="nombre">PALOMINO</div>
+      <form action="/compra" method="post">
+        <input  class="valor" name="valor" type="text" value="95000">
+        <div class="botones">
+          <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+          <label for="comprar" class="precio">$95.000</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="producto">
+      <img src="{{url_for('static', filename="img/encabezado.jpg")}}" alt="Portada" class="portada">
+      <div class="nombre">SANTA MARTA</div>
+      <form action="/compra" method="post">
+        <input  class="valor" name="valor" type="text" value="95000">
+        <div class="botones">
+          <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+          <label for="comprar" class="precio">$95.000</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="producto">
+      <img src="{{url_for('static', filename="img/encabezado.jpg")}}" alt="Portada" class="portada">
+      <div class="nombre">MINCA</div>
+      <form action="/compra" method="post">
+        <input  class="valor" name="valor" type="text" value="95000">
+        <div class="botones">
+          <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+          <label for="comprar" class="precio">$95.000</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="producto">
+      <img src="{{url_for('static', filename="img/encabezado.jpg")}}" alt="Portada" class="portada">
+      <div class="nombre">CABO SAN JUAN</div>
+      <form action="/compra" method="post">
+        <input  class="valor" name="valor" type="text" value="95000">
+        <div class="botones">
+          <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+          <label for="comprar" class="precio">$95.000</label>
+        </div>
+      </form>
+    </div>
+
+  </div>
+{% endblock %}
