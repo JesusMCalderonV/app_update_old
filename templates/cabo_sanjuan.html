@@ -1,25 +1,29 @@
 {% extends "parque_tayrona.html"%}
-{%block title%}PALOMINO{%endblock%}
-{%block titulo%}PALOMINO{%endblock%}
+{%block title%}CABO SAN JUAN{%endblock%}
+{%block titulo%}CABO SAN JUAN{%endblock%}
 
 {%block descripcion%}
-  Ubicado entre las montañsas de la Sierra Nevada de Santa Marta, es uno de los pueblitos mas visitado
-  por turistas.
-  <br>
-  Con todas las opciones de ospedaje que ofrece palomino, sus playas para aprender a surfear, 
-  hacer tubing y alejarte de la rutina, quedarse unos días resulta ser una idea muy tentadora.
+  Despues de llegar al parque Tayrona, se puede llegar a esta playa realizando una caminata de dos horas y media,
+  a caballo o tomando directamente una lancha.
+   <br>
+   <br>
+  Caracterizada por su arena gruesa y dorada, el azul perfecto del mar que combina
+  muy bien con el verde de la fauna y flora. Sin duda, una de las playas mas
+  frecuentadas por turistas al llegar al Parque Tayrona.
 {%endblock%}
+
 <br>
 <div class="galeria">
   <ul>
       {%block galeria%}
-      <li><img src="{{url_for('static', filename="img/palomino1.jpg")}}" alt=""></li>
-      <li><img src="{{url_for('static', filename="img/palomino2.jpg")}}" alt=""></li>
-      <li><img src="{{url_for('static', filename="img/palomino3.jpg")}}"  alt=""></li>
-      <li><img src="{{url_for('static', filename="img/palomino4.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/cabosanjuan1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/cabosanjuan2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/cabosanjuan3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/cabosanjuan4.jpg")}}"  alt=""></li>
       {%endblock%}
   </ul>
 </div>
+
 
 {%block incluye%}
   <li>Transporte</li>
@@ -37,7 +41,7 @@
 {%block recorrido%}
   <ol>
     <li>Lugar de encuentro</li>
-    <li>DESTINO</li>
+    <li>DESTINO; Cabo San Juan</li>
   </ol>
 {%endblock%}
 
@@ -49,8 +53,8 @@
 
 {% block producto%}
 <div class="producto">
-  <img src="{{url_for('static', filename="img/palominoventas.jpg")}}" alt="Portada" class="portada">
-  <div class="nombre">PALOMINO</div>
+  <img src="{{url_for('static', filename="img/cabosanjuanventa.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">CABO SAN JUAN</div>
   <form action="/compra" method="post">
     <input  class="valor" name="valor" type="text" value="95000">
     <div class="botones">

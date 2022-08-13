@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="icon" href="{{url_for('static', filename="img/TCT.png")}}">
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/style.css")}}" type="text/css" media="all">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,7 +9,23 @@
         <title>{%block title%}{%endblock%}</title>
     </head>
     <body>
+        <div class="paneld">
+            <div class="img-logo">
+                <img class="panel" src="{{url_for('static', filename="img/panel.png")}}" alt="The company tours">
+            </div>
+            <div class="buscador">
+                <form action="/buscar">
+                    <button class="btn-buscar" name="btn-buscar" type="submit">
+                        <img class="icon-buscar" src="{{url_for('static', filename="img/search.svg")}}" alt="">
+                    </button>
+                    <input type="text" name="buscar" class="buscar" placeholder="BUSCAR">
+                </form>
+            </div>
+        </div>
         <div class="encabezado" id="menu">
+            <button class="botonmenu">
+                <img class="mas" src="{{url_for('static', filename="img/mas.svg")}}" alt="">
+            </button>
             <ul class="principal">
                 <li><a href="/" id="actual">INICIO</a></li>
                 <li class="tours"><a href="#">TOURS</a>
@@ -18,7 +35,11 @@
                         <li><a href="/palomino">PALOMINO</a></li>
                         <li><a href="/santa_marta">SANTA MARTA</a></li>
                         <li><a href="/minca">MINCA</a></li>
+                        <li><a href="/playa_blanca">PLAYA BLANCA</a></li>
+                        <li><a href="/cabo_sanjuan">CABO SAN JUAN</a></li>
+                        <li><a href="/pozo_azul">POZO AZUL</a></li>
                         <li><a href="/tours">OTROS DESTINOS</a></li>
+                        
                     </ul></li>
                 <li><a href="/contacto">CONTACTO</a></li>
                 <li><a href="/galeria">GALERÍA</a></li>
@@ -61,6 +82,14 @@
                     <img class="icon" src="{{url_for('static', filename="img/y.svg")}}">
                 </a>
                 <br>
+                <div>
+                    <img class="phone" src="{{url_for('static', filename="img/phone.svg")}}" alt=""><p>(+57) 323 808 74 38</p>
+                </div>
+                <div>
+                    <img class="clock" src="{{url_for('static', filename="img/clock.svg")}}" alt="">
+                    <p>Horario de atención:</p>
+                    <p>8:00AM a 6:00PM</p>
+                </div>
                 <a class="cre" href="https://iconscout.com/icon-pack/social-media-contact-info">Social Media Icon Pack</a> by <a href="https://iconscout.com/contributors/bombasticon">Bombasticon Studio</a> on <a href="https://iconscout.com">IconScout</a>
             </div>
             <div class="terminos-legales">

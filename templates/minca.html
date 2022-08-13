@@ -1,4 +1,70 @@
-{% extends "plantilla.html" %}
+{% extends "parque_tayrona.html"%}
 {%block title%}MINCA{%endblock%}
-{% block body%}
-{% endblock %}
+{%block titulo%}MINCA{%endblock%}
+
+{%block descripcion%}
+Minca, un pueblo cafetero ubicado en las estribaciones de la Sierra Nevada, perdido entre la frondosa
+vegetación a 14km de Santa Marta.
+
+Ofrece una experiencia ideal para los amantes de las caminatas largas o cabalgatas,
+aprender cosas nuevas, como el proceso del café, visitar Pozo Azul; que cuenta con una gran
+cantidad de cascadas.
+<br>
+<br>
+  Este destino se caracteriza por la ambundante naturaleza hermosa que podras encontrar acampando
+  al aire libre o en alguno de sus hoteles que cuentan con un excelente servicio para hacerte vivir
+  una gran experiencia y los disntintos lugares para visitar.
+{%endblock%}
+
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/minca1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/minca2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/minca3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/minca4.jpg")}}"  alt=""></li>
+      {%endblock%}
+  </ul>
+</div>
+
+{%block incluye%}
+  <li>Transporte</li>
+  <li>Desayuno</li>
+  <li>Almuerzo</li>
+  <li>Guia</li>
+  <li>Seguro</li>
+{%endblock%}
+
+{%block noincluye%}
+<li>Estadía</li>  
+  <li>Actividades como careteo</li>
+  <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>Minca</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  Comienzo: 5:30AM
+  <br>
+  Rgreso: 3:30PM
+{%endblock%}
+
+{% block producto%}
+<div class="producto">
+  <img src="{{url_for('static', filename="img/mincaventas.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">MINCA</div>
+  <form action="/compra" method="post">
+    <input  class="valor" name="valor" type="text" value="95000">
+    <div class="botones">
+      <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+      <label for="comprar" class="precio">$95.000</label>
+    </div>
+  </form>
+</div>
+{%endblock%}

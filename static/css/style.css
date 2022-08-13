@@ -3,10 +3,138 @@
     font-size: 17px;
 }
 
+.btn-buscar{
+    margin: 0 0 3em 1em;
+    float: right;
+    background-color: #4d2f07;
+    border-radius: 30px;
+    border: none;
+    height: 40px;
+    width: 60px;
+}
+
+.galeria {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.galeria ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+
+    animation: cambio 12s infinite alternate;
+}
+
+.galeria li {
+    width: 100%;
+    list-style: no;
+}
+
+.galeria img {
+    width: 100%;
+}
+
+.buscar{
+    width: 100%;
+}
+
+.icon-buscar{
+    height: 25px;
+}
+
+.buscador{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 0 0 0;
+}
+
+.mensaje{
+    height: auto;
+    width: 70%;
+}
+
+.clock{
+    height: 100px;
+}
+
+.phone{
+    height: 80px;
+}
+
+ul{
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+
+@keyframes deslizar {
+    0%{
+        width: 40%;
+    }
+
+    100%{
+        width: auto;
+    }
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    25% {margin-left: 0;}
+
+    26%{margin-left: -100%;}
+    50%{margin-left: -100%;}
+
+    51%{margin-left: -200%;}
+    75%{margin-left: -200%;}
+
+    76%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+ }
+
+.img-logo{
+    width: 200%;
+}
+.buscar{
+    float: right;
+    height: 40px;
+    width: 40%;
+    border-radius: 30px;
+    border: solid 2px #4d2f07;
+    margin: 0 0 0 10em;
+}
+
+button{
+    cursor: pointer;
+}
+
+::placeholder{
+    text-align: center;
+}
+
+
 .encabezado-img{
     width: 100%;
-    height: 400px;
 }
+
+.botonmenu{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #4d2f07;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
 
 .valor{
     display:none;
@@ -81,7 +209,7 @@ body a{
 .whatsapp img:hover{
     background: rgb(45, 221, 124);
     transform: scale(1,1);
-    transition: 0.3;
+    transition: 0.3s;
 }
 
 .contenedor_ventas{
@@ -90,6 +218,15 @@ body a{
     justify-content: center;
     column-gap: 1em;
     row-gap: 2em;
+}
+
+.panel {
+    width: 30%;
+}
+
+.paneld{
+    display: grid;
+    grid-template-columns: 40% 60%;
 }
 
 .portada{
@@ -103,6 +240,7 @@ body a{
     background-color: #4d2f07;
     border: none;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .portada{
@@ -122,7 +260,12 @@ body a{
 }
 
 .botones{
-    padding: 1em 0 0 1em;
+    margin: 10px 20px 10px 10px;
+}
+
+.producto .botones :hover{
+    background-color: #3d362c;
+    transition: ease .5s all;
 }
 
 div > .nombre{
@@ -211,6 +354,75 @@ hr{
     
 }
 
+.grilla-destino{
+    display: grid;
+    grid-template-columns: 65% 33%;
+    column-gap: 2%;
+}
+
+h3{
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+}
+
+.text{
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+
+.cajas{
+    display: block;
+    position: relative;
+}
+
+.cajas label{
+    position: absolute;
+    top: -15px;
+    left:auto;
+}
+
+.cajas input{
+    height: 40px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+}
+
+.chat button{
+    height: 40px;
+    width: 100px;
+    background: #4d2f07;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    margin: 25px;
+}
+
+.chat button:hover{
+    background: #3d362c;
+    transition: ease .5s all;
+}
+
+.chat{
+    background: #d8cdbd;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.cabecera{
+    background:#4d2f07;
+    border-radius: 3px;
+    margin: 15px 0px;
+}
+
+.titulo-destino{
+    text-align: center;
+    font-size: 30px;
+}
+
 .link-compra:hover .comprar{
     height:45px;
 }
@@ -275,6 +487,10 @@ hr{
         font-size:20px;
     }
 
+    .buscar{
+        width:40%;
+    }
+
     *{
         font-size: 16px;
     }
@@ -292,7 +508,7 @@ hr{
         width: 60px;
         background-color: #4d2f07;
         border: none;
-        border-radius: 3px;
+        border-radius: 30px;
     }
 
     .precio {
@@ -310,8 +526,75 @@ hr{
         font-size: 20px;
     }
 
-    .desplegable li{
-        margin: 0 1em 2em 0;
+    .botonmenu{
+        display: block;
+        border-radius: 3px;
     }
 
+    .botonmenu:focus{
+        display: none;
+    }
+
+    .mas{
+        height: 35px;
+    }
+
+    .encabezado .tours:hover > ul{
+        display: block;
+        position: absolute;
+        padding: 10px;
+        background: #4d2f07;
+        border-radius: 5px;
+    }
+
+    .botonmenu:focus + .principal{
+        transform: translateX(0);
+    }
+
+    .grilla-destino{
+        display: block;
+    }
+
+    .grilla-destino .producto{
+        width: 50%;
+    }
+    
+    .botonmenu:focus{
+        outline: none;
+    }
+    
+    .encabezado .principal {
+        position: fixed;
+        top: 10%;
+        right: 0;
+        bottom: 0;
+        width: 30rem;
+        height: 90%;
+        background-color: #4d2f07;
+        transform: translateX(30rem);
+        transition: 0.5s all;
+        border-radius: 3px;
+    }
+
+    .panel{
+        width: 50%;
+    }
+    
+    .encabezado .principal ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .encabezado .principal a{
+        display: block;
+        color: #fff;
+        padding: 1rem;
+        transition: .5s all;
+    }
+    
+    .encabezado .principal a:hover{
+        text-decoration: none;
+        background-color: #4d2f07;
+    }
 }

@@ -32,6 +32,20 @@ def palo():
 def tour():
     return render_template('tours.html')
 
+@app.route('/playa_blanca')
+def playa():
+    return render_template('Playa_Blanca.html')
+
+@app.route('/cabo_sanjuan')
+def cabo():
+    return render_template('cabo_sanjuan.html')
+
+@app.route('/pozo_azul')
+def pozo():
+    return render_template('pozo_azul.html')
+
+
+
 @app.route('/compra', methods=['POST', 'GET'])
 def compra():
     if request.method == 'POST':

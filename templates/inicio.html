@@ -8,7 +8,7 @@
       <form action="/compra" method="post">
         <input  class="valor" name="valor" type="text" value="95000">
         <div class="botones">
-          <button type="submit" class="comprar" id="comprar" name="comprar"><a class="link-compar" href="#"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></a></button>
+          <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
           <label for="comprar" class="precio">$95.000</label>
         </div>
       </form>
@@ -73,6 +73,5 @@
         </div>
       </form>
     </div>
-
   </div>
 {% endblock %}

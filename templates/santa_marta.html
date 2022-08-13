@@ -1,10 +1,65 @@
-{% extends "plantilla.html" %}
+{% extends "parque_tayrona.html"%}
 {%block title%}SANTA MARTA{%endblock%}
-{% block body%}
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est ullam ducimus et hic fuga veritatis praesentium esse cum porro cumque, illo aliquid vitae fugit quam sed, accusantium, repellendus culpa. Et.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro blanditiis voluptatem quaerat fuga fugit error totam laborum architecto, ullam maxime! Obcaecati sit labore, sapiente repudiandae quidem sequi aliquid rerum consectetur.
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime rem temporibus est neque debitis fugit totam delectus error expedita, culpa placeat optio omnis? Aspernatur eligendi, quidem omnis aut exercitationem fugiat.
-  {% for i in range(20)%}
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati atque reprehenderit temporibus culpa esse ab natus nemo sit voluptate ratione sunt soluta provident id corporis ipsam ullam, harum, dolorem voluptatibus.
-  {%endfor%}
-{% endblock %}
+{%block titulo%}SANTA MARTA{%endblock%}
+
+{%block descripcion%}
+Una ciudad con muchisimo por conocer; La quinta de San Pedro, el parque de los novios, entre otros.
+Cada uno con uns historia que contar.<br>
+Una forma muy linda de conocer esta hermosa ciudad es tomando una chiva rumbera; una especie de bus 
+con musica de todo tipo que te llevará por un tour en la ciudad con tu familia y diferentes personas.
+{%endblock%}
+
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/santamarta1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/santamarta2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/santamarta3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/santamarta4.jpg")}}"  alt=""></li>
+      
+      {%endblock%}
+  </ul>
+</div>
+
+
+{%block incluye%}
+  <li>Transporte</li>
+  <li>Desayuno</li>
+  <li>Almuerzo</li>
+  <li>Guia</li>
+  <li>Seguro</li>
+{%endblock%}
+
+{%block noincluye%}
+<li>Estadía</li>  
+  <li>Actividades como careteo</li>
+  <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>Destino; El R odadero</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  Comienzo: 5:30AM
+  <br>
+  Rgreso: 3:30PM
+{%endblock%}
+
+{% block producto%}
+<div class="producto">
+  <img src="{{url_for('static', filename="img/santamartventas1.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">Santa Marta</div>
+  <form action="/compra" method="post">
+    <input  class="valor" name="valor" type="text" value="95000">
+    <div class="botones">
+      <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+      <label for="comprar" class="precio">$95.000</label>
+    </div>
+  </form>
+</div>
+{%endblock%}

@@ -1,22 +1,21 @@
 {% extends "parque_tayrona.html"%}
-{%block title%}PALOMINO{%endblock%}
-{%block titulo%}PALOMINO{%endblock%}
+{%block title%}POZO AZUL{%endblock%}
+{%block titulo%}POZO AZUL{%endblock%}
 
 {%block descripcion%}
-  Ubicado entre las montañsas de la Sierra Nevada de Santa Marta, es uno de los pueblitos mas visitado
-  por turistas.
-  <br>
-  Con todas las opciones de ospedaje que ofrece palomino, sus playas para aprender a surfear, 
-  hacer tubing y alejarte de la rutina, quedarse unos días resulta ser una idea muy tentadora.
+  Una vez estando en Minca, nos encontramos con la idea de "¿A cual de todos los lugares ir?" 
+  Con sus aguas cristalinas y refrescantes, encontramos que esta es una de las mejores opciones
+  para visitar y disfrutar de buenos momentos y un excelente día.
 {%endblock%}
+
 <br>
 <div class="galeria">
   <ul>
       {%block galeria%}
-      <li><img src="{{url_for('static', filename="img/palomino1.jpg")}}" alt=""></li>
-      <li><img src="{{url_for('static', filename="img/palomino2.jpg")}}" alt=""></li>
-      <li><img src="{{url_for('static', filename="img/palomino3.jpg")}}"  alt=""></li>
-      <li><img src="{{url_for('static', filename="img/palomino4.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/pozoazul1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/pozoazul2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/pozoazul3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/pozoazul4.jpg")}}"  alt=""></li>
       {%endblock%}
   </ul>
 </div>
@@ -37,7 +36,7 @@
 {%block recorrido%}
   <ol>
     <li>Lugar de encuentro</li>
-    <li>DESTINO</li>
+    <li>DESTINO; Cabo San Juan</li>
   </ol>
 {%endblock%}
 
@@ -49,8 +48,8 @@
 
 {% block producto%}
 <div class="producto">
-  <img src="{{url_for('static', filename="img/palominoventas.jpg")}}" alt="Portada" class="portada">
-  <div class="nombre">PALOMINO</div>
+  <img src="{{url_for('static', filename="img/pozoazulventa.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">POZO AZUL</div>
   <form action="/compra" method="post">
     <input  class="valor" name="valor" type="text" value="95000">
     <div class="botones">

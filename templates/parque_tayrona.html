@@ -1,10 +1,118 @@
 {% extends "plantilla.html" %}
 {%block title%}PARQUE TAYRONA{%endblock%}
 {% block body%}
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est ullam ducimus et hic fuga veritatis praesentium esse cum porro cumque, illo aliquid vitae fugit quam sed, accusantium, repellendus culpa. Et.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro blanditiis voluptatem quaerat fuga fugit error totam laborum architecto, ullam maxime! Obcaecati sit labore, sapiente repudiandae quidem sequi aliquid rerum consectetur.
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime rem temporibus est neque debitis fugit totam delectus error expedita, culpa placeat optio omnis? Aspernatur eligendi, quidem omnis aut exercitationem fugiat.
-  {% for i in range(20)%}
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati atque reprehenderit temporibus culpa esse ab natus nemo sit voluptate ratione sunt soluta provident id corporis ipsam ullam, harum, dolorem voluptatibus.
-  {%endfor%}
+  <div class="grilla-destino">
+    <div class="contenido">
+      <h1 class="titulo-destino">{%block titulo%}PARQUE TAYRONA{%endblock%}</h1>
+      <hr>
+      <p>
+        {%block descripcion%}
+        Haciendo parte de la Sierra Nevada, es considerado un Santuario de la naturaleza por ser un lugar
+        caracterizado por tener vistas hermosas, clima tropical y un ambiente tranquilo.
+        <br>
+        <br>
+        Cuenta con diferentes sitios para visitar, como;
+        <br>
+        <li>Playa del muerto; llamada asi porque, segun los historias, existia un cementerio, luego
+          de que la ciudad creciera, fue necesario enterrar los cuerpos en otro lugar, y aunque para
+          el sitio se propuso el nombre "Playa del Sol", los lugareños continuaron llamandole
+          "Playa del Muerto".</li>
+          <br>
+        <li>Pueblito Chairama; ruinas arqueologicas de pobladores Tayrona, que fue habitado
+          hace mas de 500 años.</li>
+          <br>
+        <li>Sector Arrecifes; zona con servicio de alojamiento, baños y restaurante. Aunque
+          la playa no se recomienda apta para nadar por la fuerza de las olas.</li>
+          <br>
+          El Parque Tayrona es un destino natural que sin duda te dejará fascinado, 
+          con una diversidad de fauna y flora que forman lindos paisajes
+        {%endblock%}
+      </p>
+      <br>
+      <div class="galeria">
+        <ul>
+            {%block galeria%}
+            <li><img src="{{url_for('static', filename="img/tayrona1.jpg")}}" alt=""></li>
+            <li><img src="{{url_for('static', filename="img/tayrona2.jpg")}}" alt=""></li>
+            <li><img src="{{url_for('static', filename="img/tayrona3.jpg")}}"  alt=""></li>
+            <li><img src="{{url_for('static', filename="img/tayrona4.jpg")}}"  alt=""></li>
+            {%endblock%}
+        </ul>
+    </div>
+      <br>
+      <p>
+        <h2>INCLUYE</h2>
+        {%block incluye%}
+          <li>Transporte</li>
+          <li>Desayuno</li>
+          <li>Almuerzo</li>
+          <li>Guia</li>
+          <li>Seguro</li>
+        {%endblock%}
+        <br>
+        <h2>NO INCLUYE</h2>
+        {%block noincluye%}
+          <li>Actividades como careteo</li>
+          <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+        {%endblock%}
+        <br>
+        <h2>RECORRIDO</h2>
+        {%block recorrido%}
+          <ol>
+            <li>Lugar de encuentro</li>
+            <li>Parque tayrona</li>
+          </ol>
+        {%endblock%}
+        <h2>HORARIOS</h2>
+        {%block horario%}
+          Comienzo: 5:30AM
+          <br>
+          Rgreso: 3:30PM
+        {%endblock%}
+      </p>
+    </div>
+    <div class="comercial">
+      {%block producto%}
+        <div class="producto">
+          <img src="{{url_for('static', filename="img/tayronaventas.jpg")}}" alt="Portada" class="portada">
+          <div class="nombre">PARQUE TAYRONA</div>
+          <form action="/compra" method="post">
+            <input  class="valor" name="valor" type="text" value="95000">
+            <div class="botones">
+              <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+              <label for="comprar" class="precio">$95.000</label>
+            </div>
+          </form>
+        </div>
+      {%endblock%}
+      <div class="chat">
+        <form action="/contactar">
+          <div class="cabecera">
+            <h3 class="chat-box">TE CONTACTAMOS</h3>
+            <P class="text">Deja tus datos y nos comunicamos contigo</P>
+          </div>
+          <div class="cajas">
+            <label for="nombre">Nombre Completo</label>
+            <input required type="text" name="nombre" id="nombre" placeholder="Luis Cervantes">
+          </div>
+          <br>
+          <div class="cajas">
+            <label for="">Correo electrónico</label>
+            <input name="email" type="email" class="datos" placeholder="eje: luis@ttc.com">
+          </div>
+          <br>
+          <div class="cajas">
+            <label for="num">Teléfono</label>
+            <input id="num" type="number" class="datos" name="tel" placeholder="eje: +57 XXXXXXXXXX">
+          </div>
+          <br>
+          <div class="cajas">
+            <label for="mensaje">Mensaje</label>
+            <input class="mensaje" type="text" name="mensaje" id="mensaje" required>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 {% endblock %}
