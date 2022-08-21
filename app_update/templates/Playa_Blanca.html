@@ -1,0 +1,69 @@
+{% extends "parque_tayrona.html"%}
+{%block title%}PLAYA BLANCA{%endblock%}
+{%block titulo%}PLAYA BLANCA{%endblock%}
+
+{%block descripcion%}
+Después de un pequeño viaje en lancha, de aproximadamente 10 minutos, disfrutando de la vistas
+desde el mar, con la respectiva seguridad de los chalecos y un asiento cómodo para el recorrido, nos
+encontraremos con Playa blanca, uno de los sitios mas hermosos, donde podrás pasar todo el día nadando,
+bebiendo tu cerveza, haciendo las diferentes actividades acuáticas que allí se hacen ¡Disfrutando con
+tu familia, pareja, amigos y hasta solo!
+<br>
+Ademas de disfrutar del agua y el ambiente, también cuenta con muchísimos restaurantes que ofrecen 
+nuestra comida típica y vendedores ambulantes con accesorios y muchísima variedad de cosas.
+{%endblock%}
+
+
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/playablanca1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/playablanca2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/playablanca3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/playablanca4.jpg")}}"  alt=""></li>
+      {%endblock%}
+  </ul>
+</div>
+
+{%block incluye%}
+  <li>Transporte</li>
+  <li>Desayuno</li>
+  <li>Almuerzo</li>
+  <li>Guia</li>
+  <li>Seguro</li>
+{%endblock%}
+
+{%block noincluye%}
+  <li>Actividades como careteo</li>
+  <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>DESTINO; Cabo San Juan</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  <p>
+    INICIO - 5:30AM
+    <br><br>
+    REGRESO - 3:30PM
+  </p>
+{%endblock%}
+
+{% block producto%}
+<div class="producto">
+  <img src="{{url_for('static', filename="img/playablancaventa.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">PLAYA BLANCA</div>
+  <form action="/compra" method="post">
+    <input  class="valor" name="valor" type="text" value="95000">
+    <div class="botones">
+      <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+      <label for="comprar" class="precio">$95.000</label>
+    </div>
+  </form>
+</div>
+{%endblock%}

@@ -1,0 +1,76 @@
+{% extends "parque_tayrona.html"%}
+{%block title%}PALOMINO{%endblock%}
+{%block titulo%}PALOMINO{%endblock%}
+
+{%block descripcion%}
+      Ubicado entre las montañas de la Sierra Nevada de Santa Marta, es uno de los pueblos mas visitado
+      por todo lo que ofrece.
+      <br>
+      Con todas las opciones de hospedaje que ofrece palomino, sus playas para aprender a surfear, 
+      hacer Tubing y alejarte de la rutina, quedarse unos días resulta ser una idea muy tentadora.
+      Aquí podras quedarte a visitar;
+      <li>la playa de palomino tiene actividades muy entretenidas.</li><br>
+      <li>Tubing.</li><br>
+      <li>Tomar clases de Surf.</li><br>
+      <li>hacer Bad Monkey o surf de remo.</li><br>
+      <li>Tours de varios días o Dogshelter; donde podrás conocer monumentos de interés acompañado
+      de perritos.</li><br>
+      <li>Visitar un Spa, o ir a un parque de aventuras aéreas.</li> <br>
+      <li>Incluso ir a Bares y discotecas</li>
+      <br><br>
+      Este destino tiene tantas cosas por experimentar que bien, podrías querer volver a ir en tus próximas
+      vacaciones.
+{%endblock%}
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/palomino1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/palomino2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/palomino3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/palomino4.jpg")}}"  alt=""></li>
+      {%endblock%}
+  </ul>
+</div>
+
+{%block incluye%}
+  <li>Transporte</li>
+  <li>Desayuno</li>
+  <li>Almuerzo</li>
+  <li>Guia</li>
+  <li>Seguro</li>
+{%endblock%}
+
+{%block noincluye%}
+  <li>Actividades como careteo</li>
+  <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>DESTINO</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  <p>
+    INICIO - 5:30AM
+    <br><br>
+    REGRESO - 3:30PM
+  </p>
+{%endblock%}
+
+{% block producto%}
+<div class="producto">
+  <img src="{{url_for('static', filename="img/palominoventas.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">PALOMINO</div>
+  <form action="/compra" method="post">
+    <input  class="valor" name="valor" type="text" value="95000">
+    <div class="botones">
+      <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+      <label for="comprar" class="precio">$95.000</label>
+    </div>
+  </form>
+</div>
+{%endblock%}

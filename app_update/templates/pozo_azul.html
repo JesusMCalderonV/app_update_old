@@ -1,0 +1,67 @@
+{% extends "parque_tayrona.html"%}
+{%block title%}POZO AZUL{%endblock%}
+{%block titulo%}POZO AZUL{%endblock%}
+
+{%block descripcion%}
+Una vez estando en Minca, nos encontramos con la idea de "¿A cual de todos los lugares ir?" 
+Con sus aguas cristalinas y refrescantes, encontramos que esta es una de las mejores opciones
+para visitar y disfrutar de buenos momentos y un excelente día. <br> <br>
+Por opinión de los propios turistas, aseguran que la experiencia no es la misma si no se hace el
+recorrido a pie; 3km de caminata en ascenso, acompañado de las hermosas vistas de la Sierra Nevada
+para interactuar completamente con la naturaleza. Entonces, finalizado el recorrido, la sensación
+de alegría por haber llegado será mucho mas grande y disfrutarás mejor del lugar al refrescarte con
+sus aguas.
+
+{%endblock%}
+
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/pozoazul1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/pozoazul2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/pozoazul3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/pozoazul4.jpg")}}"  alt=""></li>
+      {%endblock%}
+  </ul>
+</div>
+
+{%block incluye%}
+  <li>Transporte</li>
+  <li>Desayuno</li>
+  <li>Almuerzo</li>
+  <li>Guia</li>
+  <li>Seguro</li>
+{%endblock%}
+
+{%block noincluye%}
+  <li>Actividades como careteo</li>
+  <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>DESTINO; Cabo San Juan</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  Comienzo: 5:30AM
+  <br>
+  Rgreso: 3:30PM
+{%endblock%}
+
+{% block producto%}
+<div class="producto">
+  <img src="{{url_for('static', filename="img/pozoazulventa.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">POZO AZUL</div>
+  <form action="/compra" method="post">
+    <input  class="valor" name="valor" type="text" value="95000">
+    <div class="botones">
+      <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+      <label for="comprar" class="precio">$95.000</label>
+    </div>
+  </form>
+</div>
+{%endblock%}

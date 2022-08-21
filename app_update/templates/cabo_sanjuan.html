@@ -1,0 +1,65 @@
+{% extends "parque_tayrona.html"%}
+{%block title%}CABO SAN JUAN{%endblock%}
+{%block titulo%}CABO SAN JUAN{%endblock%}
+
+{%block descripcion%}
+Después de llegar al parque Tayrona, se puede llegar a esta playa realizando una caminata de dos horas y media,
+a caballo o tomando directamente una lancha, cualquiera de las opciones anteriores es muy buena.
+<br><br>
+Caracterizada por su arena gruesa y dorada, el azul perfecto del mar que combina
+muy bien con el verde de la fauna y flora, perfecto para refrescarte y pasar un rato agradable.
+Sin duda, una de las playas mas frecuentadas por turistas al llegar al Parque Tayrona.
+{%endblock%}
+
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/cabosanjuan1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/cabosanjuan2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/cabosanjuan3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/cabosanjuan4.jpg")}}"  alt=""></li>
+      {%endblock%}
+  </ul>
+</div>
+
+
+{%block incluye%}
+  <li>Transporte</li>
+  <li>Desayuno</li>
+  <li>Almuerzo</li>
+  <li>Guia</li>
+  <li>Seguro</li>
+{%endblock%}
+
+{%block noincluye%}
+  <li>Actividades como careteo</li>
+  <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>DESTINO; Cabo San Juan</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  Comienzo: 5:30AM
+  <br>
+  Rgreso: 3:30PM
+{%endblock%}
+
+{% block producto%}
+<div class="producto">
+  <img src="{{url_for('static', filename="img/cabosanjuanventa.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">CABO SAN JUAN</div>
+  <form action="/compra" method="post">
+    <input  class="valor" name="valor" type="text" value="95000">
+    <div class="botones">
+      <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+      <label for="comprar" class="precio">$95.000</label>
+    </div>
+  </form>
+</div>
+{%endblock%}

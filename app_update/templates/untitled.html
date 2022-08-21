@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/style.css")}}" type="text/css" media="all">
+    <title>GFG</title>
+</head>
+
+<style>
+	.caja-busqueda{
+		border: none;
+		float: left;
+		margin-top: 1%;
+		margin-left: 1.5%;
+		border-radius: 30px;
+		height: 6vh;
+		text-align: center;
+		width: 40%;
+	}
+
+	.contenedor-caja{
+		background: #08f;
+		height: 10vh;
+		width: 100%;
+	}
+
+	.contenedor-lista{
+		height: max-content;
+		width: 50%;
+		overflow-x: hidden;
+		background: #6f6f6f13;
+	}
+
+	.caja-busqueda:focus + .lista-sitios{
+		display: block;
+	}
+
+	.contenedor-global{
+		width: 100%;
+		height: 50vh;
+	}
+</style>
+
+<body>
+
+	<div class="grilla-herramientas">
+		<div class="encabezado" id="menu">
+	        <ul class="principal">
+	            <li><a href="/" id="actual">INICIO</a></li>
+	            <li class="tours"><a href="#">TOURS</a>
+	                <ul class="desplegable">
+	                    <li><a href="/parque_tayrona">PARQUE TAYRONA</a></li>
+	                    <li><a href="/ciudad_perdida">CIUDAD PERDIDA</a></li>
+	                    <li><a href="/palomino">PALOMINO</a></li>
+	                    <li><a href="/santa_marta">SANTA MARTA</a></li>
+	                    <li><a href="/minca">MINCA</a></li>
+	                    <li><a href="/playa_blanca">PLAYA BLANCA</a></li>
+	                    <li><a href="/cabo_sanjuan">CABO SAN JUAN</a></li>
+	                    <li><a href="/pozo_azul">POZO AZUL</a></li>
+	                    <li><a href="/tours">OTROS DESTINOS</a></li>  
+	                </ul>
+	            </li>
+	            <li><a href="#contacto">CONTACTO</a></li>
+	            <li><a href="/galeria">GALERÍA</a></li>
+	        </ul>
+	    </div>
+	    <div class="contenedor-global">
+	    	<div class="contenedor-caja">
+	    		<input type="text" class="caja-busqueda" placeholder="Buscar" />
+	    	</div>
+	    	<div class="contenedor-lista">
+	    		<ul class="lista-sitios" type="None">
+	        		<li><a href="/parque_tayrona">PARQUE TAYRONA</a></li>
+	        		<li><a href="/ciudad_perdida">CIUDAD PERDIDA</a></li>
+	        		<li><a href="/palomino">PALOMINO</a></li>
+	        		<li><a href="/santa_marta">SANTA MARTA</a></li>
+	        		<li><a href="/minca">MINCA</a></li>
+	        		<li><a href="/playa_blanca">PLAYA BLANCA</a></li>
+	        		<li><a href="/cabo_sanjuan">CABO SAN JUAN</a></li>
+	        		<li><a href="/pozo_azul">POZO AZUL</a></li>
+	        		<li><a href="/tours">OTROS DESTINOS</a></li>
+	    		</ul>
+	    	</div>
+	    </div>
+	</div>
+
+  
+  
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+  
+$('.lista-sitios li').each(function(){
+$(this).attr('data-search-term', $(this).text().toLowerCase());
+});
+  
+$('.caja-busqueda').on('keyup', function(){
+  
+var searchTerm = $(this).val().toLowerCase();
+  
+    $('.lista-sitios li').each(function(){
+  
+        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+  
+    });
+  
+});
+  
+});
+</script>
+  
+</body>
+</html>

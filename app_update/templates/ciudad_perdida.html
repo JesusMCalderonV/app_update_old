@@ -1,0 +1,68 @@
+{% extends "parque_tayrona.html"%}
+{%block title%}CIUDAD PERDIDA{%endblock%}
+{%block titulo%}CIUDAD PERDIDA{%endblock%}
+
+{%block descripcion%}
+Después de una caminata llena de hermosos paisajes y lugares para descansar, encontrando ruinas 
+entre la vegetación y creyendo que la experiencia no puede mejorar,
+llegamos a nuestro destino; Ciudad perdida, que fue construida al rededor del año 700 
+después de cristo.
+<br><br>
+Un lugar que te dejará sin aliento, excelente para los amantes del senderismo y curiosos con amor
+a conocer nuevas cosas. Junto a los guías, que conocen muy bien el territorio, te ayudaran a 
+tener una experiencia inolvidable.
+
+{%endblock%}
+
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/ciudad1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/ciudad2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/ciudad3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/ciudad4.jpg")}}"  alt=""></li>
+      {%endblock%}
+  </ul>
+</div>
+
+{%block incluye%}
+  <li>Transporte</li>
+  <li>Desayuno</li>
+  <li>Almuerzo</li>
+  <li>Guia</li>
+  <li>Seguro</li>
+{%endblock%}
+
+{%block noincluye%}
+  <li>Actividades como careteo</li>
+  <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>Caminata hacia la ciudad perdida</li>
+    <li>Ciudad perdida</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  Comienzo: 5:30AM
+  <br>
+  Rgreso: 3:30PM
+{%endblock%}
+
+{% block producto%}
+<div class="producto">
+  <img src="{{url_for('static', filename="img/ciudadventas.jpg")}}" alt="Portada" class="portada">
+  <div class="nombre">CIUDAD PERDIDA</div>
+  <form action="/compra" method="post">
+    <input  class="valor" name="valor" type="text" value="95000">
+    <div class="botones">
+      <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+      <label for="comprar" class="precio">$95.000</label>
+    </div>
+  </form>
+</div>
+{%endblock%}

@@ -1,0 +1,131 @@
+{% extends "plantilla.html" %}
+{%block title%}PARQUE TAYRONA{%endblock%}
+{% block body%}
+  <div class="grilla-destino">
+    <div class="contenido">
+      <h1 class="titulo-destino">{%block titulo%}PARQUE TAYRONA{%endblock%}</h1>
+      <hr>
+      <p>
+        {%block descripcion%}
+        Haciendo parte de la Sierra Nevada, es considerado un Santuario de la naturaleza por ser un lugar
+        caracterizado por tener vistas hermosas, clima tropical y un ambiente tranquilo.
+        <br>
+        <br>
+        Cuenta con diferentes sitios para visitar, como;
+        <br>
+        <li>Playa del muerto; llamada así porque, según los historias, existía un cementerio, luego
+        de que la ciudad creciera, fue necesario enterrar los cuerpos en otro lugar, y aunque para
+        el sitio se propuso el nombre "Playa del Sol", los lugareños continuaron llamándole
+        "Playa del Muerto".</li>
+        <br>
+        <li>Pueblito Chairama; ruinas arqueológicas de pobladores Tayrona, que fue habitado
+        hace mas de 500 años.</li>
+        <br>
+        <li>Sector Arrecifes; zona con servicio de alojamiento, baños y restaurante. Aunque
+        la playa no se recomienda apta para nadar por la fuerza de las olas.</li>
+        <br>
+        El Parque Tayrona es un destino natural que sin duda te dejará fascinado, 
+        con una diversidad de fauna y flora que forman lindos paisajes
+        {%endblock%}
+      </p>
+      <br>
+      <div class="galeria">
+        <ul>
+            {%block galeria%}
+            <li><img src="{{url_for('static', filename="img/tayrona1.jpg")}}" alt=""></li>
+            <li><img src="{{url_for('static', filename="img/tayrona2.jpg")}}" alt=""></li>
+            <li><img src="{{url_for('static', filename="img/tayrona3.jpg")}}"  alt=""></li>
+            <li><img src="{{url_for('static', filename="img/tayrona4.jpg")}}"  alt=""></li>
+            {%endblock%}
+        </ul>
+    </div>
+      <br>
+      <p>
+        <h2 class="info">INCLUYE</h2> 
+          <ul>
+            {%block incluye%}
+              <li>Transporte</li>
+              <li>Desayuno</li>
+              <li>Almuerzo</li>
+              <li>Guia</li>
+              <li>Seguro</li>
+            {%endblock%}
+          </ul>
+        <br>
+        <h2 class="info">NO INCLUYE</h2>
+          <ul>
+            {%block noincluye%}
+              <li>Actividades como careteo</li>
+              <li>Cualquier otra que no se encuentre descrita en la sección de arriba</li>
+            {%endblock%}
+          </ul>
+        <br>
+        <h2 class="info">RECORRIDO</h2>
+        {%block recorrido%}
+          <ol>
+            <li>Lugar de encuentro</li>
+            <li>Parque tayrona</li>
+          </ol>
+        {%endblock%}
+        <h2 class="info_horario">HORARIOS</h2>
+        <div class="horario">
+          {%block horario%}
+              <p>
+                INICIO - 5:30AM
+                <br><br>
+                REGRESO - 3:30PM
+              </p>
+          {%endblock%}
+        </div>
+      </p>
+    </div>
+    <div class="comercial">
+      {%block producto%}
+        <div class="producto">
+          <img src="{{url_for('static', filename="img/tayronaventas.jpg")}}" alt="Portada" class="portada">
+          <div class="nombre">PARQUE TAYRONA</div>
+          <form action="/compra" method="post">
+            <input  class="valor" name="valor" type="text" value="95000">
+            <div class="botones">
+              <button type="submit" class="comprar" id="comprar" name="comprar"><img class="btn-comprar" src="{{ url_for('static', filename='img/compra.svg') }}" alt=""></button>
+              <label for="comprar" class="precio">$95.000</label>
+            </div>
+          </form>
+        </div>
+      {%endblock%}
+      <div class="chat">
+        <form action="/contactar">
+          <div class="cabecera">
+            <h3 class="chat-box">TE CONTACTAMOS</h3>
+            <P class="text">Deja tus datos y nos comunicamos contigo</P>
+          </div>
+          <div class="cajas">
+            <label for="nombre">Nombre Completo</label>
+            <input required type="text" name="nombre" id="nombre" placeholder="Luis Cervantes">
+          </div>
+          <br>
+          <div class="cajas">
+            <label for="">Correo electrónico</label>
+            <input name="email" type="email" class="datos" placeholder="eje: luis@ttc.com">
+          </div>
+          <br>
+          <div class="cajas">
+            <label for="num">Teléfono</label>
+            <input id="num" type="number" autocomplete="tel" class="datos" name="tel" placeholder="eje: +57 XXXXXXXXXX">
+          </div>
+          <br>
+          <div class="cajas">
+            <label for="mensaje">Mensaje</label>
+            <input class="mensaje" type="text" name="mensaje" id="mensaje" required>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <style>
+      .ipnut#.num.datos{
+        display: none;
+      }
+    </style>
+  </div>
+{% endblock %}
